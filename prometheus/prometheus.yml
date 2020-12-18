@@ -15,7 +15,7 @@ global:
 scrape_configs:
   - job_name: "cAdvisor"
     static_configs:
-    - targets: ["cadvisor:8080"]
+    - targets: ["cadvisor:8081"]
       labels:
         group: 'dev'
     scrape_interval: 5s
