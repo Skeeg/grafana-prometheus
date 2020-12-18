@@ -11,12 +11,13 @@ services:
       - "3100:3100"
     volumes:
       - $PWD/loki:/etc/loki
+      - $PWD/tmp:/tmp/loki
     command: -config.file=/etc/loki/loki-local-config.yaml
     networks:
       - loki
 
   promtail:
-    image: grafana/promtail:make-images-static-26a87c9
+    image: grafana/promtail:master
     volumes:
       - $PWD/promtail:/etc/promtail
       - /var/log:/var/log

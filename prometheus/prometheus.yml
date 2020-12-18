@@ -1,6 +1,6 @@
 #my global config
 global:
-  scrape_interval:     5s # By default, scrape targets every 15 seconds.
+  scrape_interval:     30s # By default, scrape targets every 15 seconds.
   evaluation_interval: 5s # By default, scrape targets every 15 seconds.
 # scrape_timeout is set to the global default (10s).
 # Attach these extra labels to all timeseries collected by this Prometheus instance.
@@ -18,18 +18,408 @@ scrape_configs:
     - targets: ["cadvisor:8080"]
       labels:
         group: 'dev'
+    scrape_interval: 5s
   - job_name: "node-exporter"
     static_configs:
     - targets: ["node-exporter:9100"]
       labels:
         group: 'dev'
+    scrape_interval: 5s
   - job_name: "prometheus"
     static_configs:
     - targets: ["prometheus:9090"]
       labels:
         group: 'dev'
+    scrape_interval: 5s
   - job_name: "promtail"
     static_configs:
     - targets: ["loki:3100"]
       labels:
         group: 'dev'
+    scrape_interval: 5s
+  - job_name: 'tasmotas'  # Arbitrary
+    static_configs:
+      - targets:
+        - '10.2.4.13:80'
+        labels:
+          hostname: 'FamilyLights'
+          location: 'Family Room'
+      - targets:
+        - '10.2.4.14:80'
+        labels:
+          hostname: 'FamilyFan'
+          location: 'Family Room'
+      - targets:
+        - '10.2.4.16:80'
+        labels:
+          hostname: 'LilyHall'
+          location: 'Upstairs Hall'
+      - targets:
+        - '10.2.4.17:80'
+        labels:
+          hostname: 'EntryCans_C1'
+          location: 'Main Hall'
+      - targets:
+        - '10.2.4.18:80'
+        labels:
+          hostname: 'EntryCans'
+          location: 'Main Entry'
+      - targets:
+        - '10.2.4.19:80'
+        labels:
+          hostname: 'EntryCans_C2'
+          location: 'Upstairs Hall'
+      - targets:
+        - '10.2.4.20:80'
+        labels:
+          hostname: 'KidsSink'
+          location: 'Upstairs Bathroom'
+      - targets:
+        - '10.2.4.21:80'
+        labels:
+          hostname: 'AustinHall'
+          location: 'Upstairs Hall'
+      - targets:
+        - '10.2.4.22:80'
+        labels:
+          hostname: 'DadsLights'
+          location: 'Dads Room'
+      - targets:
+        - '10.2.4.23:80'
+        labels:
+          hostname: 'LilyHall_C1'
+          location: 'Upstairs Hall'
+      - targets:
+        - '10.2.4.24:80'
+        labels:
+          hostname: 'PorchLights'
+          location: 'Main Entry'
+      - targets:
+        - '10.2.4.26:80'
+        labels:
+          hostname: 'AustinHall_C1'
+          location: 'Upstairs Hall'
+      - targets:
+        - '10.2.4.27:80'
+        labels:
+          hostname: 'LilyHall_C2'
+          location: 'Upstairs Hall'
+      - targets:
+        - '10.2.4.28:80'
+        labels:
+          hostname: 'MainHall_C1'
+          location: 'Main Hall'
+      - targets:
+        - '10.2.4.29:80'
+        labels:
+          hostname: 'MainHall'
+          location: 'Main Hall'
+      - targets:
+        - '10.2.4.30:80'
+        labels:
+          hostname: 'MainHall_C2'
+          location: 'Main Hall'
+      - targets:
+        - '10.2.4.31:80'
+        labels:
+          hostname: 'KitchenCans'
+          location: 'Main Hall'
+      - targets:
+        - '10.2.4.32:80'
+        labels:
+          hostname: 'KitchenSink'
+          location: 'Main Hall'
+      - targets:
+        - '10.2.4.33:80'
+        labels:
+          hostname: 'KitchenSink_C1'
+          location: 'Kitchen'
+      - targets:
+        - '10.2.4.34:80'
+        labels:
+          hostname: 'KitchenCans_C1'
+          location: 'Kitchen'
+      - targets:
+        - '10.2.4.35:80'
+        labels:
+          hostname: 'PowderHall'
+          location: 'Main Hall'
+      - targets:
+        - '10.2.4.36:80'
+        labels:
+          hostname: 'StudyLights'
+          location: 'Study'
+      - targets:
+        - '10.2.4.37:80'
+        labels:
+          hostname: 'LibraryLights'
+          location: 'Library'
+      - targets:
+        - '10.2.4.38:80'
+        labels:
+          hostname: 'ComputerAustin'
+          location: 'Study'
+      # - targets:
+      #   - '10.2.4.40:80'
+      #   labels:
+      #     hostname: 'CurtainLights'
+      #     location: 'Family Room'
+      - targets:
+        - '10.2.4.41:80'
+        labels:
+          hostname: 'EveLights'
+          location: 'Front Entry'
+      - targets:
+        - '10.2.4.42:80'
+        labels:
+          hostname: 'PowderFan'
+          location: 'Powder Bathroom'
+      - targets:
+        - '10.2.4.43:80'
+        labels:
+          hostname: 'StudyFan'
+          location: 'Study'
+      - targets:
+        - '10.2.4.44:80'
+        labels:
+          hostname: 'PowderLights'
+          location: 'Powder Bathroom'
+      - targets:
+        - '10.2.4.46:80'
+        labels:
+          hostname: 'DadsLamp'
+          location: 'Dads Room'
+      - targets:
+        - '10.2.4.47:80'
+        labels:
+          hostname: 'ChristmasPackage'
+          location: 'Main Entry'
+      - targets:
+        - '10.2.4.48:80'
+        labels:
+          hostname: 'BasementLights'
+          location: 'Basement'
+      - targets:
+        - '10.2.4.50:80'
+        labels:
+          hostname: 'DiningLights'
+          location: 'Dining'
+      - targets:
+        - '10.2.4.51:80'
+        labels:
+          hostname: 'PatioLights'
+          location: 'Dinnig'
+      - targets:
+        - '10.2.4.52:80'
+        labels:
+          hostname: 'GarageLights'
+          location: 'Garage'
+      - targets:
+        - '10.2.4.53:80'
+        labels:
+          hostname: 'ExteriorGarageLights'
+          location: 'Garage'
+      - targets:
+        - '10.2.4.54:80'
+        labels:
+          hostname: 'KidsBathroomFan'
+          location: 'Kids Bathroom'
+      # - targets:
+      #   - '10.2.4.55:80'
+      #   labels:
+      #     hostname: 'BuffetDecor'
+      #     location: 'Main Hall'
+      - targets:
+        - '10.2.4.56:80'
+        labels:
+          hostname: 'GroundDecor'
+          location: 'Outside'
+      - targets:
+        - '10.2.4.57:80'
+        labels:
+          hostname: 'ElectricFence'
+          location: 'Outside'
+      - targets:
+        - '10.2.4.58:80'
+        labels:
+          hostname: 'ComputerLily'
+          location: 'Study'
+      - targets:
+        - '10.2.4.59:80'
+        labels:
+          hostname: 'MainTV'
+          location: 'Family Room'
+      - targets:
+        - '10.2.4.60:80'
+        labels:
+          hostname: 'MantleDecor'
+          location: 'Family Room'
+      - targets:
+        - '10.2.4.61:80'
+        labels:
+          hostname: 'MasterTV'
+          location: 'Master Bedroom'
+      - targets:
+        - '10.2.4.62:80'
+        labels:
+          hostname: 'TopChristmas'
+          location: 'Outside'
+      - targets:
+        - '10.2.4.63:80'
+        labels:
+          hostname: 'ComputerMedia'
+          location: 'Basement'
+      # - targets:
+      #   - '10.2.4.64:80'
+      #   labels:
+      #     hostname: 'LilyFan'
+      #     location: ''
+      # - targets:
+      #   - '10.2.4.65:80'
+      #   labels:
+      #     hostname: 'FrontTree'
+      #     location: 'Family Room'
+      # - targets:
+      #   - '10.2.4.66:80'
+      #   labels:
+      #     hostname: 'FirePlace'
+      #     location: 'Family Room'
+      - targets:
+        - '10.2.4.67:80'
+        labels:
+          hostname: 'ExteriorSide'
+          location: 'Garage'
+      - targets:
+        - '10.2.4.68:80'
+        labels:
+          hostname: 'GarageLights_C1'
+          location: 'Garage'
+      - targets:
+        - '10.2.4.69:80'
+        labels:
+          hostname: 'PetLights'
+          location: 'Austins Room'
+      - targets:
+        - '10.2.4.72:80'
+        labels:
+          hostname: 'KidsToilet'
+          location: 'Kids Bathroom'
+      - targets:
+        - '10.2.4.73:80'
+        labels:
+          hostname: 'KidsShower'
+          location: 'Kids Bathroom'
+      - targets:
+        - '10.2.4.83:80'
+        labels:
+          hostname: 'EntryChandelier'
+          location: 'Main Entry'
+      - targets:
+        - '10.2.4.89:80'
+        labels:
+          hostname: 'BottomChristmas'
+          location: 'Outside'
+      - targets:
+        - '10.2.4.90:80'
+        labels:
+          hostname: 'KitchenTable'
+          location: 'Kitchen'
+      - targets:
+        - '10.2.4.91:80'
+        labels:
+          hostname: 'EndTable'
+          location: 'Family Room'
+      - targets:
+        - '10.2.4.92:80'
+        labels:
+          hostname: 'IslandDecorations'
+          location: 'Kitchen'
+      - targets:
+        - '10.2.4.93:80'
+        labels:
+          hostname: 'ChristmasRailing'
+          location: 'Library'
+      - targets:
+        - '10.2.4.96:80'
+        labels:
+          hostname: 'MediaRemote'
+          location: 'Family Room'
+      - targets:
+        - '10.2.4.98:80'
+        labels:
+          hostname: 'BuffetDecor'
+          location: 'Main Hall'
+      - targets:
+        - '10.2.4.99:80'
+        labels:
+          hostname: 'EntryDecorations'
+          location: 'Main Entry'
+      - targets:
+        - '10.2.4.100:80'
+        labels:
+          hostname: 'RailingLights'
+          location: 'Upstairs Hall'
+      - targets:
+        - '10.2.4.101:80'
+        labels:
+          hostname: 'CurtainLights'
+          location: 'Family Room'
+      - targets:
+        - '10.2.4.102:80'
+        labels:
+          hostname: 'GarageLamp'
+          location: 'Garage'
+      - targets:
+        - '10.2.4.103:80'
+        labels:
+          hostname: 'FirePlace'
+          location: 'Family Room'
+      - targets:
+        - '10.2.4.104:80'
+        labels:
+          hostname: 'Blower'
+          location: 'Family Room'
+      - targets:
+        - '10.2.4.105:80'
+        labels:
+          hostname: 'LeftMantle'
+          location: 'Family Room'
+      - targets:
+        - '10.2.4.109:80'
+        labels:
+          hostname: 'DadsTest'
+          location: 'Dads Room'
+      - targets:
+        - '10.2.4.111:80'
+        labels:
+          hostname: 'FrontTree'
+          location: 'Family Room'
+    scrape_interval: 60s
+  - job_name: 'critical_devices'  # Arbitrary
+    static_configs:
+      - targets:
+        - '10.2.4.39:80'
+        labels:
+          hostname: 'DeepFreeze'
+          location: 'Garage'
+      - targets:
+        - '10.2.4.45:80'
+        labels:
+          hostname: 'GarageFreezer'
+          location: 'Garage'
+      - targets:
+        - '10.2.4.49:80'
+        labels:
+          hostname: 'GarageFridge'
+          location: 'Garage'
+      - targets:
+        - '10.2.4.70:80'
+        labels:
+          hostname: 'KitchenFridge'
+          location: 'Kitchen'
+      - targets:
+        - '10.2.4.71:80'
+        labels:
+          hostname: 'HotTub'
+          location: 'Outside'
+    scrape_interval: 30s
