@@ -15,7 +15,6 @@
   "editable": true,
   "gnetId": null,
   "graphTooltip": 0,
-  "id": 3,
   "links": [],
   "panels": [
     {
@@ -86,7 +85,7 @@
         "alertThreshold": true
       },
       "percentage": false,
-      "pluginVersion": "7.4.0-8851pre",
+      "pluginVersion": "7.4.0-8924pre",
       "pointradius": 0.5,
       "points": true,
       "renderer": "flot",
@@ -221,7 +220,7 @@
         "alertThreshold": true
       },
       "percentage": false,
-      "pluginVersion": "7.4.0-8851pre",
+      "pluginVersion": "7.4.0-8924pre",
       "pointradius": 0.5,
       "points": true,
       "renderer": "flot",
@@ -367,7 +366,7 @@
         "alertThreshold": true
       },
       "percentage": false,
-      "pluginVersion": "7.4.0-8851pre",
+      "pluginVersion": "7.4.0-8924pre",
       "pointradius": 0.5,
       "points": true,
       "renderer": "flot",
@@ -502,7 +501,7 @@
         "alertThreshold": true
       },
       "percentage": false,
-      "pluginVersion": "7.4.0-8851pre",
+      "pluginVersion": "7.4.0-8924pre",
       "pointradius": 0.5,
       "points": true,
       "renderer": "flot",
@@ -637,7 +636,7 @@
         "alertThreshold": true
       },
       "percentage": false,
-      "pluginVersion": "7.4.0-8851pre",
+      "pluginVersion": "7.4.0-8924pre",
       "pointradius": 0.5,
       "points": true,
       "renderer": "flot",
@@ -772,7 +771,7 @@
         "alertThreshold": true
       },
       "percentage": false,
-      "pluginVersion": "7.4.0-8851pre",
+      "pluginVersion": "7.4.0-8924pre",
       "pointradius": 0.5,
       "points": true,
       "renderer": "flot",
@@ -907,7 +906,7 @@
         "alertThreshold": true
       },
       "percentage": false,
-      "pluginVersion": "7.4.0-8851pre",
+      "pluginVersion": "7.4.0-8924pre",
       "pointradius": 0.5,
       "points": true,
       "renderer": "flot",
@@ -1042,7 +1041,7 @@
         "alertThreshold": true
       },
       "percentage": false,
-      "pluginVersion": "7.4.0-8851pre",
+      "pluginVersion": "7.4.0-8924pre",
       "pointradius": 0.5,
       "points": true,
       "renderer": "flot",
@@ -1140,6 +1139,141 @@
               }
             ]
           },
+          "unit": "voltamp"
+        },
+        "overrides": []
+      },
+      "fill": 0,
+      "fillGradient": 0,
+      "gridPos": {
+        "h": 9,
+        "w": 12,
+        "x": 0,
+        "y": 36
+      },
+      "hiddenSeries": false,
+      "id": 13,
+      "legend": {
+        "alignAsTable": true,
+        "avg": false,
+        "current": true,
+        "hideEmpty": true,
+        "hideZero": true,
+        "max": true,
+        "min": true,
+        "rightSide": true,
+        "show": true,
+        "sideWidth": null,
+        "sort": "current",
+        "sortDesc": true,
+        "total": false,
+        "values": true
+      },
+      "lines": true,
+      "linewidth": 3,
+      "nullPointMode": "null",
+      "options": {
+        "alertThreshold": true
+      },
+      "percentage": false,
+      "pluginVersion": "7.4.0-8924pre",
+      "pointradius": 0.5,
+      "points": true,
+      "renderer": "flot",
+      "seriesOverrides": [],
+      "spaceLength": 10,
+      "stack": false,
+      "steppedLine": false,
+      "targets": [
+        {
+          "expr": "energy_voltage_volts",
+          "interval": "",
+          "legendFormat": "{{hostname}}-{{instance}}",
+          "refId": "A"
+        }
+      ],
+      "thresholds": [
+        {
+          "colorMode": "critical",
+          "fill": true,
+          "line": true,
+          "op": "gt",
+          "yaxis": "left"
+        }
+      ],
+      "timeFrom": null,
+      "timeRegions": [],
+      "timeShift": null,
+      "title": "Active Amps",
+      "tooltip": {
+        "shared": true,
+        "sort": 0,
+        "value_type": "individual"
+      },
+      "transformations": [],
+      "type": "graph",
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "decimals": 2,
+          "format": "voltamp",
+          "label": "",
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        },
+        {
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": false
+        }
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
+    },
+    {
+      "aliasColors": {},
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
+      "datasource": "Prometheus",
+      "decimals": 1,
+      "description": "",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "custom": {
+            "align": null,
+            "filterable": false
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
           "unit": "s"
         },
         "overrides": []
@@ -1177,7 +1311,7 @@
         "alertThreshold": true
       },
       "percentage": false,
-      "pluginVersion": "7.4.0-8851pre",
+      "pluginVersion": "7.4.0-8924pre",
       "pointradius": 0.5,
       "points": true,
       "renderer": "flot",
@@ -1260,5 +1394,5 @@
   "timezone": "",
   "title": "Tasmota Statistics",
   "uid": "tasmota",
-  "version": 7
+  "version": 1
 }
