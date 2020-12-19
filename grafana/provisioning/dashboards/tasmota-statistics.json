@@ -529,7 +529,7 @@
       "timeFrom": null,
       "timeRegions": [],
       "timeShift": null,
-      "title": "Humidity",
+      "title": "Pressure",
       "tooltip": {
         "shared": true,
         "sort": 0,
@@ -1204,7 +1204,7 @@
       "timeFrom": null,
       "timeRegions": [],
       "timeShift": null,
-      "title": "Active Amps",
+      "title": "Voltage",
       "tooltip": {
         "shared": true,
         "sort": 0,
@@ -1221,15 +1221,17 @@
       },
       "yaxes": [
         {
+          "$$hashKey": "object:109",
           "decimals": 2,
           "format": "voltamp",
           "label": "",
           "logBase": 1,
-          "max": null,
-          "min": null,
+          "max": "125",
+          "min": "115",
           "show": true
         },
         {
+          "$$hashKey": "object:110",
           "format": "short",
           "label": null,
           "logBase": 1,
@@ -1394,5 +1396,5 @@
   "timezone": "",
   "title": "Tasmota Statistics",
   "uid": "tasmota",
-  "version": 1
+  "version": 2
 }
