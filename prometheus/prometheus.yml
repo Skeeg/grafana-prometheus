@@ -15,7 +15,7 @@ global:
 scrape_configs:
   - job_name: "cAdvisor"
     static_configs:
-    - targets: ["cadvisor:8081"]
+    - targets: ["cadvisor:8080"]
       labels:
         group: 'dev'
     scrape_interval: 5s
@@ -184,11 +184,11 @@ scrape_configs:
         labels:
           hostname: 'PowderLights'
           location: 'Powder Bathroom'
-      - targets:
-        - '10.2.4.46:80'
-        labels:
-          hostname: 'DadsLamp'
-          location: 'Dads Room'
+      # - targets:
+      #   - '10.2.4.46:80'
+      #   labels:
+      #     hostname: 'DadsLamp'
+      #     location: 'Dads Room'
       - targets:
         - '10.2.4.47:80'
         labels:
@@ -234,11 +234,11 @@ scrape_configs:
         labels:
           hostname: 'GroundDecor'
           location: 'Outside'
-      - targets:
-        - '10.2.4.57:80'
-        labels:
-          hostname: 'ElectricFence'
-          location: 'Outside'
+      # - targets:
+      #   - '10.2.4.57:80'
+      #   labels:
+      #     hostname: 'ElectricFence'
+      #     location: 'Outside'
       - targets:
         - '10.2.4.58:80'
         labels:
@@ -249,11 +249,11 @@ scrape_configs:
         labels:
           hostname: 'MainTV'
           location: 'Family Room'
-      - targets:
-        - '10.2.4.60:80'
-        labels:
-          hostname: 'MantleDecor'
-          location: 'Family Room'
+      # - targets:
+      #   - '10.2.4.60:80'
+      #   labels:
+      #     hostname: 'MantleDecor'
+      #     location: 'Family Room'
       - targets:
         - '10.2.4.61:80'
         labels:
@@ -394,7 +394,27 @@ scrape_configs:
         labels:
           hostname: 'FrontTree'
           location: 'Family Room'
-    scrape_interval: 60s
+      - targets:
+        - '10.2.4.113:80'
+        labels:
+          hostname: 'DadsFan'
+          location: 'Dads Room'
+      - targets:
+        - '10.2.4.114:80'
+        labels:
+          hostname: 'ElectricFence'
+          location: 'Outside'
+      - targets:
+        - '10.2.4.116:80'
+        labels:
+          hostname: 'MantleDecor'
+          location: 'Family Room'
+      - targets:
+        - '10.2.4.117:80'
+        labels:
+          hostname: 'DadsLamp'
+          location: 'Dads Room'
+    scrape_interval: 120s
   - job_name: 'critical_devices'  # Arbitrary
     static_configs:
       - targets:
