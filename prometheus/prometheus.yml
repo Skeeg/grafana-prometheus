@@ -37,7 +37,7 @@ scrape_configs:
       labels:
         group: 'dev'
     scrape_interval: 5s
-  - job_name: 'tasmotas'  # Arbitrary
+  - job_name: 'tasmotas'
     static_configs:
       - targets:
         - '10.2.4.13:80'
@@ -249,11 +249,6 @@ scrape_configs:
         labels:
           hostname: 'MainTV'
           location: 'Family Room'
-      # - targets:
-      #   - '10.2.4.60:80'
-      #   labels:
-      #     hostname: 'MantleDecor'
-      #     location: 'Family Room'
       - targets:
         - '10.2.4.61:80'
         labels:
@@ -365,11 +360,6 @@ scrape_configs:
           hostname: 'CurtainLights'
           location: 'Family Room'
       - targets:
-        - '10.2.4.102:80'
-        labels:
-          hostname: 'GarageLamp'
-          location: 'Garage'
-      - targets:
         - '10.2.4.103:80'
         labels:
           hostname: 'FirePlace'
@@ -385,20 +375,10 @@ scrape_configs:
           hostname: 'LeftMantle'
           location: 'Family Room'
       - targets:
-        - '10.2.4.109:80'
-        labels:
-          hostname: 'DadsTest'
-          location: 'Dads Room'
-      - targets:
         - '10.2.4.111:80'
         labels:
           hostname: 'FrontTree'
           location: 'Library'
-      - targets:
-        - '10.2.4.112:80'
-        labels:
-          hostname: 'RetroPi'
-          location: 'Family Room'
       - targets:
         - '10.2.4.113:80'
         labels:
@@ -420,7 +400,7 @@ scrape_configs:
           hostname: 'DadsLamp'
           location: 'Dads Room'
     scrape_interval: 120s
-  - job_name: 'critical_devices'  # Arbitrary
+  - job_name: 'always_on'
     static_configs:
       - targets:
         - '10.2.4.39:80'
@@ -438,6 +418,11 @@ scrape_configs:
           hostname: 'GarageFridge'
           location: 'Garage'
       - targets:
+        - '10.2.4.60:80'
+        labels:
+          hostname: 'DadsWorkspace'
+          location: 'Basement'
+      - targets:
         - '10.2.4.70:80'
         labels:
           hostname: 'KitchenFridge'
@@ -448,3 +433,21 @@ scrape_configs:
           hostname: 'HotTub'
           location: 'Outside'
     scrape_interval: 30s
+  - job_name: 'sensor_devices'
+    static_configs:
+      - targets:
+        - '10.2.4.102:80'
+        labels:
+          hostname: 'GarageLamp'
+          location: 'Garage'
+      - targets:
+        - '10.2.4.109:80'
+        labels:
+          hostname: 'DadsTest'
+          location: 'Dads Room'
+      - targets:
+        - '10.2.4.112:80'
+        labels:
+          hostname: 'RetroPi'
+          location: 'Family Room'
+    scrape_interval: 60s
