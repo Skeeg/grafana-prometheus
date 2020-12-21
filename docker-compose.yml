@@ -29,8 +29,9 @@ services:
     container_name: prometheus
     image: prom/prometheus
     volumes:
-      - ./prometheus:/etc/prometheus/
-      - prometheus_data:/data:rw
+      - ./prometheus/config:/etc/prometheus/
+        # - prometheus_data:/data:rw
+      - ./prometheus/data/:/prometheus/data/:rw
     command:
       - '--config.file=/etc/prometheus/prometheus.yml'
     ports:
@@ -68,6 +69,7 @@ services:
       - 3000:3000
     volumes:
       - ./grafana/provisioning/:/etc/grafana/provisioning/
+      - ./grafana/plugins/:/var/lib/grafana/plugins/:z
     restart: always
     environment:
       GF_EXPLORE_ENABLED: "true"
@@ -96,6 +98,5 @@ services:
       - '--housekeeping_interval=10s'
     restart: always
 
-volumes:
-  prometheus_data:
-
+#volumes:
+#  prometheus_data:
