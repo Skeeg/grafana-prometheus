@@ -393,6 +393,11 @@ scrape_configs:
         - '10.2.4.111:80'
         labels:
           hostname: 'FrontTree'
+          location: 'Library'
+      - targets:
+        - '10.2.4.112:80'
+        labels:
+          hostname: 'RetroPi'
           location: 'Family Room'
       - targets:
         - '10.2.4.113:80'
