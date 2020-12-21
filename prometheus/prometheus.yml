@@ -450,4 +450,9 @@ scrape_configs:
         labels:
           hostname: 'RetroPi'
           location: 'Family Room'
+      - targets:
+        - '10.2.4.119:80'
+        labels:
+          hostname: 'WorkspaceMonitor'
+          location: 'Basement'
     scrape_interval: 60s
