@@ -69,12 +69,16 @@ services:
       - 3000:3000
     volumes:
       - ./grafana/provisioning/:/etc/grafana/provisioning/
-      - ./grafana/plugins/:/var/lib/grafana/plugins/:z
+      - ./grafana/plugins/:/var/lib/grafana/plugins/
     restart: always
     environment:
       GF_EXPLORE_ENABLED: "true"
+      GF_AUTH_ANONYMOUS_ENABLED: "true"
+      GF_DASHBOARDS_DEFAULT_HOME_DASHBOARD_PATH: "/etc/grafana/provisioning/dashboards/tasmota-monitoring.json"
     networks: 
       - loki
+    secrets:
+      - my_file_secret
 
   cadvisor:
     container_name: cadvisor
@@ -100,3 +104,7 @@ services:
 
 #volumes:
 #  prometheus_data:
+
+secrets:                        # top level secrets block
+  my_file_secret:
+    file: ./grafana/provisioning/notifiers/secret.tst
