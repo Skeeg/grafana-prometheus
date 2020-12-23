@@ -259,11 +259,6 @@ scrape_configs:
         labels:
           hostname: 'TopChristmas'
           location: 'Outside'
-      - targets:
-        - '10.2.4.63:80'
-        labels:
-          hostname: 'ComputerMedia'
-          location: 'Basement'
       # - targets:
       #   - '10.2.4.64:80'
       #   labels:
@@ -423,6 +418,11 @@ scrape_configs:
           hostname: 'DadsWorkspace'
           location: 'Basement'
       - targets:
+        - '10.2.4.63:80'
+        labels:
+          hostname: 'ComputerMedia'
+          location: 'Basement'
+      - targets:
         - '10.2.4.70:80'
         labels:
           hostname: 'KitchenFridge'
@@ -450,6 +450,11 @@ scrape_configs:
         labels:
           hostname: 'RetroPi'
           location: 'Family Room'
+      - targets:
+        - '10.2.4.118:80'
+        labels:
+          hostname: 'ElectricFence'
+          location: 'Outside'
       - targets:
         - '10.2.4.119:80'
         labels:
