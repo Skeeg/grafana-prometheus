@@ -380,11 +380,6 @@ scrape_configs:
           hostname: 'DadsFan'
           location: 'Dads Room'
       - targets:
-        - '10.2.4.114:80'
-        labels:
-          hostname: 'ElectricFence'
-          location: 'Outside'
-      - targets:
         - '10.2.4.116:80'
         labels:
           hostname: 'MantleDecor'
@@ -451,10 +446,15 @@ scrape_configs:
           hostname: 'RetroPi'
           location: 'Family Room'
       - targets:
-        - '10.2.4.118:80'
+        - '10.2.4.114:80'
         labels:
           hostname: 'ElectricFence'
           location: 'Outside'
+      - targets:
+        - '10.2.4.118:80'
+        labels:
+          hostname: 'Experiment(-5F)'
+          location: 'Portable'
       - targets:
         - '10.2.4.119:80'
         labels:
