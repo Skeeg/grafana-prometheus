@@ -1004,7 +1004,7 @@
         "noDataState": "alerting",
         "notifications": [
           {
-            "uid": "b9NiB4iRk"
+            "uid": "slack_notifier1"
           }
         ]
       },
@@ -1312,7 +1312,7 @@
         "noDataState": "alerting",
         "notifications": [
           {
-            "uid": "b9NiB4iRk"
+            "uid": "slack_notifier1"
           }
         ]
       },
@@ -1575,7 +1575,7 @@
         "noDataState": "alerting",
         "notifications": [
           {
-            "uid": "b9NiB4iRk"
+            "uid": "slack_notifier1"
           }
         ]
       },
