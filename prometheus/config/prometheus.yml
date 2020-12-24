@@ -159,11 +159,6 @@ scrape_configs:
         labels:
           hostname: 'ComputerAustin'
           location: 'Study'
-      # - targets:
-      #   - '10.2.4.40:80'
-      #   labels:
-      #     hostname: 'CurtainLights'
-      #     location: 'Family Room'
       - targets:
         - '10.2.4.41:80'
         labels:
@@ -184,11 +179,6 @@ scrape_configs:
         labels:
           hostname: 'PowderLights'
           location: 'Powder Bathroom'
-      # - targets:
-      #   - '10.2.4.46:80'
-      #   labels:
-      #     hostname: 'DadsLamp'
-      #     location: 'Dads Room'
       - targets:
         - '10.2.4.47:80'
         labels:
@@ -224,21 +214,11 @@ scrape_configs:
         labels:
           hostname: 'KidsBathroomFan'
           location: 'Kids Bathroom'
-      # - targets:
-      #   - '10.2.4.55:80'
-      #   labels:
-      #     hostname: 'BuffetDecor'
-      #     location: 'Main Hall'
       - targets:
         - '10.2.4.56:80'
         labels:
           hostname: 'GroundDecor'
           location: 'Outside'
-      # - targets:
-      #   - '10.2.4.57:80'
-      #   labels:
-      #     hostname: 'ElectricFence'
-      #     location: 'Outside'
       - targets:
         - '10.2.4.58:80'
         labels:
@@ -259,21 +239,6 @@ scrape_configs:
         labels:
           hostname: 'TopChristmas'
           location: 'Outside'
-      # - targets:
-      #   - '10.2.4.64:80'
-      #   labels:
-      #     hostname: 'LilyFan'
-      #     location: ''
-      # - targets:
-      #   - '10.2.4.65:80'
-      #   labels:
-      #     hostname: 'FrontTree'
-      #     location: 'Family Room'
-      # - targets:
-      #   - '10.2.4.66:80'
-      #   labels:
-      #     hostname: 'FirePlace'
-      #     location: 'Family Room'
       - targets:
         - '10.2.4.67:80'
         labels:
@@ -403,6 +368,11 @@ scrape_configs:
           hostname: 'GarageFreezer'
           location: 'Garage'
       - targets:
+        - '10.2.4.46:80'
+        labels:
+          hostname: 'NetworkEquipment'
+          location: 'Utility Closet'
+      - targets:
         - '10.2.4.49:80'
         labels:
           hostname: 'GarageFridge'
@@ -453,11 +423,44 @@ scrape_configs:
       - targets:
         - '10.2.4.118:80'
         labels:
-          hostname: 'Experiment(-5F)'
-          location: 'Portable'
+          hostname: 'InternetRouter'
+          location: 'Utility Closet'
       - targets:
         - '10.2.4.119:80'
         labels:
           hostname: 'WorkspaceMonitor'
           location: 'Basement'
     scrape_interval: 60s
+  # - job_name: 'power_monitors'
+  #   static_configs:
+  #     - targets:
+  #       - '10.2.4.40:80'
+  #       labels:
+  #         hostname: 'CurtainLights'
+  #         location: 'Family Room'
+  #     - targets:
+  #       - '10.2.4.55:80'
+  #       labels:
+  #         hostname: 'BuffetDecor'
+  #         location: 'Main Hall'
+  #     - targets:
+  #       - '10.2.4.57:80'
+  #       labels:
+  #         hostname: 'ElectricFence'
+  #         location: 'Outside'
+  #     - targets:
+  #       - '10.2.4.64:80'
+  #       labels:
+  #         hostname: 'LilyFan'
+  #         location: ''
+  #     - targets:
+  #       - '10.2.4.65:80'
+  #       labels:
+  #         hostname: 'FrontTree'
+  #         location: 'Family Room'
+  #     - targets:
+  #       - '10.2.4.66:80'
+  #       labels:
+  #         hostname: 'FirePlace'
+  #         location: 'Family Room'
+  #   scrape_interval: 60s
