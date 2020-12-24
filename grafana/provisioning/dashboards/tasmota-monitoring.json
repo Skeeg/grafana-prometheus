@@ -1163,7 +1163,7 @@
     {
       "alert": {
         "alertRuleTags": {
-          "InstanceInterface": "{{interface}}"
+          "InstanceInterface": "http://{{interface}}"
         },
         "conditions": [
           {
