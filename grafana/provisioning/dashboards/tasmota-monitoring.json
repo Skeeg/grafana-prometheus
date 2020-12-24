@@ -1162,7 +1162,9 @@
     },
     {
       "alert": {
-        "alertRuleTags": {},
+        "alertRuleTags": {
+          "InstanceInterface": "{{interface}}"
+        },
         "conditions": [
           {
             "evaluator": {
