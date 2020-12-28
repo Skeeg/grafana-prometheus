@@ -368,11 +368,6 @@ scrape_configs:
           hostname: 'GarageFreezer'
           location: 'Garage'
       - targets:
-        - '10.2.4.46:80'
-        labels:
-          hostname: 'LaptopCharger'
-          location: 'Portable'
-      - targets:
         - '10.2.4.49:80'
         labels:
           hostname: 'GarageFridge'
@@ -431,36 +426,41 @@ scrape_configs:
           hostname: 'WorkspaceMonitor'
           location: 'Basement'
     scrape_interval: 60s
-  # - job_name: 'power_monitors'
-  #   static_configs:
-  #     - targets:
-  #       - '10.2.4.40:80'
-  #       labels:
-  #         hostname: 'CurtainLights'
-  #         location: 'Family Room'
-  #     - targets:
-  #       - '10.2.4.55:80'
-  #       labels:
-  #         hostname: 'BuffetDecor'
-  #         location: 'Main Hall'
-  #     - targets:
-  #       - '10.2.4.57:80'
-  #       labels:
-  #         hostname: 'ElectricFence'
-  #         location: 'Outside'
-  #     - targets:
-  #       - '10.2.4.64:80'
-  #       labels:
-  #         hostname: 'LilyFan'
-  #         location: ''
-  #     - targets:
-  #       - '10.2.4.65:80'
-  #       labels:
-  #         hostname: 'FrontTree'
-  #         location: 'Family Room'
-  #     - targets:
-  #       - '10.2.4.66:80'
-  #       labels:
-  #         hostname: 'FirePlace'
-  #         location: 'Family Room'
-  #   scrape_interval: 60s
+  - job_name: 'power_monitors'
+    static_configs:
+      # - targets:
+      #   - '10.2.4.40:80'
+      #   labels:
+      #     hostname: 'CurtainLights'
+      #     location: 'Family Room'
+      - targets:
+        - '10.2.4.46:80'
+        labels:
+          hostname: 'LaptopCharger'
+          location: 'Portable'
+      # - targets:
+      #   - '10.2.4.55:80'
+      #   labels:
+      #     hostname: 'BuffetDecor'
+      #     location: 'Main Hall'
+      # - targets:
+      #   - '10.2.4.57:80'
+      #   labels:
+      #     hostname: 'ElectricFence'
+      #     location: 'Outside'
+      # - targets:
+      #   - '10.2.4.64:80'
+      #   labels:
+      #     hostname: 'LilyFan'
+      #     location: ''
+      # - targets:
+      #   - '10.2.4.65:80'
+      #   labels:
+      #     hostname: 'FrontTree'
+      #     location: 'Family Room'
+      # - targets:
+      #   - '10.2.4.66:80'
+      #   labels:
+      #     hostname: 'FirePlace'
+      #     location: 'Family Room'
+    scrape_interval: 60s
