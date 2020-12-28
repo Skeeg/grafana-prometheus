@@ -274,11 +274,11 @@ scrape_configs:
         labels:
           hostname: 'BottomChristmas'
           location: 'Outside'
-      - targets:
-        - '10.2.4.90:80'
-        labels:
-          hostname: 'KitchenTable'
-          location: 'Kitchen'
+      # - targets:
+      #   - '10.2.4.90:80'
+      #   labels:
+      #     hostname: 'KitchenTable'
+      #     location: 'Kitchen'
       - targets:
         - '10.2.4.91:80'
         labels:
