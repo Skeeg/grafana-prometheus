@@ -33,7 +33,7 @@ services:
         # - prometheus_data:/data:rw
       - ./prometheus/data/:/prometheus/data/:rw
     command:
-      - '--config.file=/etc/prometheus/prometheus.yml --storage.tsdb.retention.time 60d'
+      - '--config.file=/etc/prometheus/prometheus.yml --storage.tsdb.retention.time=60d'
     ports:
       - 9090:9090
     links:
