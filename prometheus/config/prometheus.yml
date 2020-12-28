@@ -370,8 +370,8 @@ scrape_configs:
       - targets:
         - '10.2.4.46:80'
         labels:
-          hostname: 'NetworkEquipment'
-          location: 'Utility Closet'
+          hostname: 'LaptopCharger'
+          location: 'Portable'
       - targets:
         - '10.2.4.49:80'
         labels:
