@@ -15,7 +15,7 @@
   "editable": true,
   "gnetId": null,
   "graphTooltip": 0,
-  "id": 7,
+  "id": 1,
   "links": [],
   "panels": [
     {
@@ -117,7 +117,7 @@
       "title": "Temperature",
       "tooltip": {
         "shared": true,
-        "sort": 0,
+        "sort": 2,
         "value_type": "individual"
       },
       "transformations": [],
@@ -252,7 +252,7 @@
       "title": "Pressure",
       "tooltip": {
         "shared": true,
-        "sort": 0,
+        "sort": 2,
         "value_type": "individual"
       },
       "transformations": [],
@@ -387,7 +387,7 @@
       "title": "Humidity",
       "tooltip": {
         "shared": true,
-        "sort": 0,
+        "sort": 2,
         "value_type": "individual"
       },
       "transformations": [],
@@ -486,7 +486,7 @@
       },
       "lines": true,
       "linewidth": 3,
-      "nullPointMode": "null",
+      "nullPointMode": "null as zero",
       "options": {
         "alertThreshold": true
       },
@@ -497,14 +497,27 @@
       "renderer": "flot",
       "seriesOverrides": [],
       "spaceLength": 10,
-      "stack": false,
+      "stack": true,
       "steppedLine": false,
       "targets": [
         {
-          "expr": "energy_power_kilowatts_daily",
+          "expr": "energy_power_kilowatts_daily{job=\"always_on\"}",
           "interval": "",
           "legendFormat": "{{hostname}}-{{instance}}",
           "refId": "A"
+        },
+        {
+          "expr": "energy_power_kilowatts_daily{job=\"power_monitors\"}",
+          "interval": "",
+          "legendFormat": "{{hostname}}-{{instance}}",
+          "refId": "B"
+        },
+        {
+          "expr": "sum(energy_power_kilowatts_daily)",
+          "hide": true,
+          "interval": "",
+          "legendFormat": "Sum Total",
+          "refId": "C"
         }
       ],
       "thresholds": [
@@ -522,7 +535,7 @@
       "title": "Daily Kilowatts",
       "tooltip": {
         "shared": true,
-        "sort": 0,
+        "sort": 2,
         "value_type": "individual"
       },
       "transformations": [],
@@ -637,6 +650,13 @@
           "intervalFactor": 4,
           "legendFormat": "{{hostname}}-{{instance}}",
           "refId": "A"
+        },
+        {
+          "expr": "energy_power_active_watts{job=\"power_monitors\"}",
+          "interval": "",
+          "intervalFactor": 4,
+          "legendFormat": "{{hostname}}-{{instance}}",
+          "refId": "B"
         }
       ],
       "thresholds": [],
@@ -646,7 +666,7 @@
       "title": "Active Watts",
       "tooltip": {
         "shared": true,
-        "sort": 0,
+        "sort": 2,
         "value_type": "individual"
       },
       "transformations": [],
@@ -762,10 +782,16 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "energy_current_amperes",
+          "expr": "energy_current_amperes{job=\"always_on\"}",
           "interval": "",
           "legendFormat": "{{hostname}}-{{instance}}",
           "refId": "A"
+        },
+        {
+          "expr": "energy_current_amperes{job=\"power_monitors\"}",
+          "interval": "",
+          "legendFormat": "{{hostname}}-{{instance}}",
+          "refId": "B"
         }
       ],
       "thresholds": [
@@ -783,7 +809,7 @@
       "title": "Active Amps",
       "tooltip": {
         "shared": true,
-        "sort": 0,
+        "sort": 2,
         "value_type": "individual"
       },
       "transformations": [],
@@ -1124,7 +1150,7 @@
       "title": "Critical Devices Online",
       "tooltip": {
         "shared": true,
-        "sort": 0,
+        "sort": 1,
         "value_type": "individual"
       },
       "type": "graph",
@@ -1248,29 +1274,6 @@
             "query": {
               "params": [
                 "D",
-                "5m",
-                "now"
-              ]
-            },
-            "reducer": {
-              "params": [],
-              "type": "last"
-            },
-            "type": "query"
-          },
-          {
-            "evaluator": {
-              "params": [
-                1
-              ],
-              "type": "lt"
-            },
-            "operator": {
-              "type": "or"
-            },
-            "query": {
-              "params": [
-                "E",
                 "5m",
                 "now"
               ]
@@ -1485,6 +1488,7 @@
         {
           "expr": "avg_over_time(energy_power_active_watts{hostname=\"HotTub\"}[10m])",
           "interval": "",
+          "intervalFactor": 3,
           "legendFormat": "{{hostname}}-{{instance}}",
           "refId": "F"
         }
@@ -1504,7 +1508,7 @@
       "title": "No Voltage Draw",
       "tooltip": {
         "shared": true,
-        "sort": 0,
+        "sort": 2,
         "value_type": "individual"
       },
       "type": "graph",
@@ -1723,5 +1727,5 @@
   "timezone": "",
   "title": "Tasmota Monitoring",
   "uid": "tasmota_monitoring",
-  "version": 14
+  "version": 15
 }
