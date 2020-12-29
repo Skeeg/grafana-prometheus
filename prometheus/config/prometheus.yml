@@ -155,11 +155,6 @@ scrape_configs:
           hostname: 'LibraryLights'
           location: 'Library'
       - targets:
-        - '10.2.4.38:80'
-        labels:
-          hostname: 'ComputerAustin'
-          location: 'Study'
-      - targets:
         - '10.2.4.41:80'
         labels:
           hostname: 'EveLights'
@@ -215,31 +210,6 @@ scrape_configs:
           hostname: 'KidsBathroomFan'
           location: 'Kids Bathroom'
       - targets:
-        - '10.2.4.56:80'
-        labels:
-          hostname: 'GroundDecor'
-          location: 'Outside'
-      - targets:
-        - '10.2.4.58:80'
-        labels:
-          hostname: 'ComputerLily'
-          location: 'Study'
-      - targets:
-        - '10.2.4.59:80'
-        labels:
-          hostname: 'MainTV'
-          location: 'Family Room'
-      - targets:
-        - '10.2.4.61:80'
-        labels:
-          hostname: 'MasterTV'
-          location: 'Master Bedroom'
-      - targets:
-        - '10.2.4.62:80'
-        labels:
-          hostname: 'TopChristmas'
-          location: 'Outside'
-      - targets:
         - '10.2.4.67:80'
         labels:
           hostname: 'ExteriorSide'
@@ -249,11 +219,6 @@ scrape_configs:
         labels:
           hostname: 'GarageLights_C1'
           location: 'Garage'
-      - targets:
-        - '10.2.4.69:80'
-        labels:
-          hostname: 'PetLights'
-          location: 'Austins Room'
       - targets:
         - '10.2.4.72:80'
         labels:
@@ -269,11 +234,6 @@ scrape_configs:
         labels:
           hostname: 'EntryChandelier'
           location: 'Main Entry'
-      - targets:
-        - '10.2.4.89:80'
-        labels:
-          hostname: 'BottomChristmas'
-          location: 'Outside'
       # - targets:
       #   - '10.2.4.90:80'
       #   labels:
@@ -428,6 +388,11 @@ scrape_configs:
     scrape_interval: 60s
   - job_name: 'power_monitors'
     static_configs:
+      - targets:
+        - '10.2.4.38:80'
+        labels:
+          hostname: 'ComputerAustin'
+          location: 'Study'
       # - targets:
       #   - '10.2.4.40:80'
       #   labels:
@@ -443,11 +408,36 @@ scrape_configs:
       #   labels:
       #     hostname: 'BuffetDecor'
       #     location: 'Main Hall'
+      - targets:
+        - '10.2.4.56:80'
+        labels:
+          hostname: 'GroundDecor'
+          location: 'Outside'
       # - targets:
       #   - '10.2.4.57:80'
       #   labels:
       #     hostname: 'ElectricFence'
       #     location: 'Outside'
+      - targets:
+        - '10.2.4.58:80'
+        labels:
+          hostname: 'ComputerLily'
+          location: 'Study'
+      - targets:
+        - '10.2.4.59:80'
+        labels:
+          hostname: 'MainTV'
+          location: 'Family Room'
+      - targets:
+        - '10.2.4.61:80'
+        labels:
+          hostname: 'MasterTV'
+          location: 'Master Bedroom'
+      - targets:
+        - '10.2.4.62:80'
+        labels:
+          hostname: 'TopChristmas'
+          location: 'Outside'
       # - targets:
       #   - '10.2.4.64:80'
       #   labels:
@@ -463,4 +453,14 @@ scrape_configs:
       #   labels:
       #     hostname: 'FirePlace'
       #     location: 'Family Room'
+      - targets:
+        - '10.2.4.69:80'
+        labels:
+          hostname: 'PetLights'
+          location: 'Austins Room'
+      - targets:
+        - '10.2.4.89:80'
+        labels:
+          hostname: 'BottomChristmas'
+          location: 'Outside'
     scrape_interval: 60s
