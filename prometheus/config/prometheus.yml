@@ -461,6 +461,13 @@ scrape_configs:
           location: 'Inside'
           floor: 'Basement'
       - targets:
+        - '10.2.4.66:80'
+        labels:
+          hostname: 'NetworkEquipment'
+          room: 'Utility Closet'
+          location: 'Inside'
+          floor: 'Basement'
+      - targets:
         - '10.2.4.70:80'
         labels:
           hostname: 'KitchenFridge'
@@ -595,11 +602,6 @@ scrape_configs:
       #   - '10.2.4.65:80'
       #   labels:
       #     hostname: 'FrontTree'
-      #     room: 'Family Room'
-      # - targets:
-      #   - '10.2.4.66:80'
-      #   labels:
-      #     hostname: 'FirePlace'
       #     room: 'Family Room'
       - targets:
         - '10.2.4.69:80'
