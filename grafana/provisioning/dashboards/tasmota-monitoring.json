@@ -1759,7 +1759,7 @@
       "legend": {
         "alignAsTable": true,
         "avg": false,
-        "current": false,
+        "current": true,
         "hideEmpty": true,
         "hideZero": true,
         "max": true,
@@ -1769,7 +1769,7 @@
         "sideWidth": null,
         "sort": "max",
         "sortDesc": true,
-        "total": true,
+        "total": false,
         "values": true
       },
       "lines": true,
