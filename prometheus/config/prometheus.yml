@@ -331,13 +331,13 @@ scrape_configs:
           room: 'Kitchen'
           location: 'Inside'
           floor: 'First'
-      - targets:
-        - '10.2.4.93:80'
-        labels:
-          hostname: 'ChristmasRailing'
-          room: 'Library'
-          location: 'Inside'
-          floor: 'First'
+      # - targets:
+      #   - '10.2.4.93:80'
+      #   labels:
+      #     hostname: 'ChristmasRailing'
+      #     room: 'Library'
+      #     location: 'Inside'
+      #     floor: 'First'
       - targets:
         - '10.2.4.96:80'
         labels:
@@ -394,13 +394,13 @@ scrape_configs:
           room: 'Family Room'
           location: 'Inside'
           floor: 'First'
-      - targets:
-        - '10.2.4.111:80'
-        labels:
-          hostname: 'FrontTree'
-          room: 'Library'
-          location: 'Inside'
-          floor: 'First'
+      # - targets:
+      #   - '10.2.4.111:80'
+      #   labels:
+      #     hostname: 'FrontTree'
+      #     room: 'Library'
+      #     location: 'Inside'
+      #     floor: 'First'
       - targets:
         - '10.2.4.113:80'
         labels:
@@ -423,6 +423,51 @@ scrape_configs:
           location: 'Inside'
           floor: 'Second'
     scrape_interval: 120s
+  - job_name: 'sensor_devices'
+    static_configs:
+      - targets:
+        - '10.2.4.102:80'
+        labels:
+          hostname: 'GarageLamp'
+          room: 'Garage'
+          location: 'Garage'
+          floor: 'First'
+      - targets:
+        - '10.2.4.109:80'
+        labels:
+          hostname: 'DadsTest'
+          room: 'Dads Room'
+          location: 'Inside'
+          floor: 'Second'
+      - targets:
+        - '10.2.4.112:80'
+        labels:
+          hostname: 'RetroPi'
+          room: 'Family Room'
+          location: 'Inside'
+          floor: 'First'
+      - targets:
+        - '10.2.4.114:80'
+        labels:
+          hostname: 'ElectricFence'
+          room: 'Outside'
+          location: 'Outside'
+          floor: 'Outside'
+      - targets:
+        - '10.2.4.118:80'
+        labels:
+          hostname: 'InternetRouter'
+          room: 'Utility Closet'
+          location: 'Inside'
+          floor: 'Basement'
+      - targets:
+        - '10.2.4.119:80'
+        labels:
+          hostname: 'WorkspaceMonitor'
+          room: 'Basement Office'
+          location: 'Inside'
+          floor: 'Basement'
+    scrape_interval: 60s
   - job_name: 'always_on'
     static_configs:
       - targets:
@@ -482,51 +527,6 @@ scrape_configs:
           location: 'Outside'
           floor: 'Outside'
     scrape_interval: 30s
-  - job_name: 'sensor_devices'
-    static_configs:
-      - targets:
-        - '10.2.4.102:80'
-        labels:
-          hostname: 'GarageLamp'
-          room: 'Garage'
-          location: 'Garage'
-          floor: 'First'
-      - targets:
-        - '10.2.4.109:80'
-        labels:
-          hostname: 'DadsTest'
-          room: 'Dads Room'
-          location: 'Inside'
-          floor: 'Second'
-      - targets:
-        - '10.2.4.112:80'
-        labels:
-          hostname: 'RetroPi'
-          room: 'Family Room'
-          location: 'Inside'
-          floor: 'First'
-      - targets:
-        - '10.2.4.114:80'
-        labels:
-          hostname: 'ElectricFence'
-          room: 'Outside'
-          location: 'Outside'
-          floor: 'Outside'
-      - targets:
-        - '10.2.4.118:80'
-        labels:
-          hostname: 'InternetRouter'
-          room: 'Utility Closet'
-          location: 'Inside'
-          floor: 'Basement'
-      - targets:
-        - '10.2.4.119:80'
-        labels:
-          hostname: 'WorkspaceMonitor'
-          room: 'Basement Office'
-          location: 'Inside'
-          floor: 'Basement'
-    scrape_interval: 60s
   - job_name: 'power_monitors'
     static_configs:
       - targets:
@@ -536,11 +536,13 @@ scrape_configs:
           room: 'Study'
           location: 'Inside'
           floor: 'First'
-      # - targets:
-      #   - '10.2.4.40:80'
-      #   labels:
-      #     hostname: 'CurtainLights'
-      #     room: 'Family Room'
+      - targets:
+        - '10.2.4.40:80'
+        labels:
+          hostname: 'Unused1'
+          room: 'Portable'
+          location: 'Inside'
+          floor: 'First'
       - targets:
         - '10.2.4.46:80'
         labels:
@@ -548,11 +550,13 @@ scrape_configs:
           room: 'Portable'
           location: 'Inside'
           floor: 'First'
-      # - targets:
-      #   - '10.2.4.55:80'
-      #   labels:
-      #     hostname: 'BuffetDecor'
-      #     room: 'Main Hall'
+      - targets:
+        - '10.2.4.55:80'
+        labels:
+          hostname: 'Unused2'
+          room: 'Portable'
+          location: 'Inside'
+          floor: 'First'
       - targets:
         - '10.2.4.56:80'
         labels:
