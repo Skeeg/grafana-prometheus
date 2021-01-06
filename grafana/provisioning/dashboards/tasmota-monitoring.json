@@ -1785,7 +1785,7 @@
       "renderer": "flot",
       "seriesOverrides": [],
       "spaceLength": 10,
-      "stack": true,
+      "stack": false,
       "steppedLine": false,
       "targets": [
         {
@@ -1794,6 +1794,13 @@
           "intervalFactor": 10,
           "legendFormat": "{{hostname}}-{{instance}}",
           "refId": "A"
+        },
+        {
+          "expr": "sum(tasmota_sensors_yesterday_)*.105959",
+          "interval": "",
+          "intervalFactor": 10,
+          "legendFormat": "Sum_Total",
+          "refId": "B"
         }
       ],
       "thresholds": [],
