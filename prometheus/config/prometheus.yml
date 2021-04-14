@@ -467,6 +467,13 @@ scrape_configs:
           room: 'Basement Office'
           location: 'Inside'
           floor: 'Basement'
+      - targets:
+        - '10.2.4.131:80'
+        labels:
+          hostname: 'LilysVigil'
+          room: 'Lilys Room'
+          location: 'Inside'
+          floor: 'Second'
     scrape_interval: 60s
   - job_name: 'always_on'
     static_configs:
@@ -564,11 +571,13 @@ scrape_configs:
           room: 'Outside'
           location: 'Outside'
           floor: 'Outside'
-      # - targets:
-      #   - '10.2.4.57:80'
-      #   labels:
-      #     hostname: 'ElectricFence'
-      #     room: 'Outside'
+      - targets:
+        - '10.2.4.57:80'
+        labels:
+          hostname: 'Unused3'
+          room: 'Portable'
+          location: 'Inside'
+          floor: 'First'
       - targets:
         - '10.2.4.58:80'
         labels:
@@ -597,16 +606,20 @@ scrape_configs:
           room: 'Outside'
           location: 'Outside'
           floor: 'Outside'
-      # - targets:
-      #   - '10.2.4.64:80'
-      #   labels:
-      #     hostname: 'LilyFan'
-      #     room: ''
-      # - targets:
-      #   - '10.2.4.65:80'
-      #   labels:
-      #     hostname: 'FrontTree'
-      #     room: 'Family Room'
+      - targets:
+        - '10.2.4.64:80'
+        labels:
+          hostname: 'ServerDisks'
+          room: 'Basement Office'
+          location: 'Inside'
+          floor: 'Basement'
+      - targets:
+        - '10.2.4.65:80'
+        labels:
+          hostname: 'Unused4'
+          room: 'Portable'
+          location: 'Inside'
+          floor: 'First'
       - targets:
         - '10.2.4.69:80'
         labels:
